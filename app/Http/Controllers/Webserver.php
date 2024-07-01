@@ -12,7 +12,7 @@ class Webserver extends Controller
         $visitorName = $request->query('visitor_name', 'Guest');
         $clientIp = $request->ip();
 
-        // Handle localhost case for testing
+        // localhost case for testing
         if ($clientIp == '127.0.0.1' || $clientIp == '::1') {
             $clientIp = '127.0.0.1'; // Use a public IP for testing
         }
@@ -23,7 +23,7 @@ class Webserver extends Controller
 
         $city = $geoData['city'] ?? 'Unknown';
 
-        // Use a weather API to get temperature data
+        // weather API to get temperature data
         $weatherResponse = Http::get("http://api.openweathermap.org/data/2.5/weather", [
             'q' => $city,
             'appid' => env('OPENWEATHER_API_KEY'),
