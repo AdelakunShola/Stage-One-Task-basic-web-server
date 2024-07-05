@@ -1,0 +1,10 @@
+version: "2"
+tunnels:
+  http:
+    addr: 80
+    proto: http
+    inspect: false
+    metadata: "ngrok-skip-browser-warning:any-value"
+    header:
+      - "ngrok-skip-browser-warning:any-value"
+      - "User-Agent: CustomUserAgent/1.0"
